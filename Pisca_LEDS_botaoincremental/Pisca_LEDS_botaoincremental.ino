@@ -9,6 +9,7 @@ int g = 9;
 int b = 8;
 int cont = 0;
 
+//assinaturas
 int randomize();
 void rando();
 
