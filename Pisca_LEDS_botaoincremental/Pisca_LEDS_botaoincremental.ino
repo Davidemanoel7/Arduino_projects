@@ -22,6 +22,7 @@ pinMode(r, OUTPUT);
 pinMode(g, OUTPUT);
 pinMode(b, OUTPUT);
 Serial.begin(9600);
+randomSeed(analogRead(0));
 }
 
 void loop() {
@@ -126,7 +127,7 @@ void pisca1(){
   delay(500);
  }
 
-  void rando() {
+ void rando() {
   int n;
   n = randomize();
   switch (n)
@@ -148,10 +149,10 @@ void pisca1(){
   }
 }
 
-  int randomize (){
+ int randomize (){
     int k;
-    srand(time(NULL));
-    k = 1 + rand() % 4;
-    printf("valor =\t %d", k);
-  return k;  
- }
+    k = 1 + random(4); //valor aleatorio entre 0 e 4...
+    Serial.print("rand = \t");
+    Serial.println(k);
+    return k;  
+}
