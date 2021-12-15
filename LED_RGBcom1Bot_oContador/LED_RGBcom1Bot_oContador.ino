@@ -28,10 +28,10 @@ void setup() {
 void loop() {
   cont = digitalRead(butt);
   if (cont == HIGH){
-    //cont++;
-    Serial.println(cont);
+  cont++;
+  Serial.println(cont);
   }
-  //do {
+  
     switch(cont){
       case 1:
         piscavermelho();
@@ -49,7 +49,7 @@ void loop() {
         cont = 0;
         break;
         }
-    //} while (butt!=0);
+    
 }
 
 void piscavermelho(void){
