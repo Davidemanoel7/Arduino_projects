@@ -13,15 +13,18 @@ void setup()
 void loop()
 {
   int varLuz= analogRead(LDR); // Definindo uma variável que recebe o valor lido.
-  if (varLuz < 60){            // Se o valor lido for < 70 (depende do ambiente), ligue o LED.
+  if (varLuz < 60){            // Se o valor lido for < 60 (depende do ambiente), ligue o LED.
     digitalWrite(LED, HIGH);
+    Serial.println("Valor da varLuz = ");
     Serial.println(varLuz);
-    Serial.println("O Ambiente está escuro...");
-    delay(1000);
-  } else {                     // Se o valor lido for > 70, desligue o LED.
+    Serial.println("Ambiente está escuro...");
+    delay(500);
+  } else {                     // Se o valor lido for > 60, desligue o LED.
     digitalWrite(LED, LOW);
-    Serial.println("O Ambiente está claro...");
-    delay(1000);
+    Serial.println("Valor da varLuz = ");
+    Serial.println(varLuz);
+    Serial.println("Ambiente está claro...");
+    delay(500);
   }
-  delay(1000);
+  delay(500);
 }

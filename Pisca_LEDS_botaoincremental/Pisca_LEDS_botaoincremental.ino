@@ -1,4 +1,7 @@
-int botao = 2;
+#include <stdlib.h>
+#include <time.h>
+
+int botao = 7;
 int wt = 12;
 int y =  11;
 int r = 10;
@@ -18,13 +21,14 @@ Serial.begin(9600);
 }
 
 void loop() {
-  if (digitalRead(botao) == HIGH){
-  cont ++;
-  Serial.println(cont);
-  delay(200);}
+
+  if (digitalRead(botao)){
+  delay(500);    
+  cont ++;  
+  Serial.println(cont);  
+  }
     
-   //do{
-    switch (cont){
+  switch (cont){
    
      case 1:
        pisca1();
@@ -38,11 +42,14 @@ void loop() {
      case 4:
        pisca4();
        break;
+     case 5:
+        rando();
+        break;
      default:
        cont = 0;
        break;
-    } 
-  //}while(cont !=0);
+  } 
+  
 }
 
 void pisca1(){
@@ -114,4 +121,34 @@ void pisca1(){
   digitalWrite(g, LOW);
   digitalWrite(b, LOW);
   delay(500);
+ }
+
+  void rando() {
+  int n;
+  n = randomize();
+  switch (n)
+  {
+    case 1:
+      pisca1();
+      break;
+    case 2:
+      pisca2();
+      break;
+    case 3:
+      pisca3();
+      break;
+    case 4:
+      pisca4();
+      break;
+    default:
+      break;
+  }
+}
+
+  int randomize (){
+    int k;
+    srand(time(NULL));
+    k = 1 + rand() % 4;
+    printf("valor =\t %d", k);
+  return k;  
  }
