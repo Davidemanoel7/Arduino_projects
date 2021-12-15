@@ -9,6 +9,9 @@ int g = 9;
 int b = 8;
 int cont = 0;
 
+int randomize();
+void rando();
+
 void setup() {
   
 pinMode(botao, INPUT);
@@ -48,8 +51,7 @@ void loop() {
      default:
        cont = 0;
        break;
-  } 
-  
+  }   
 }
 
 void pisca1(){
