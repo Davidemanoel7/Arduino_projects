@@ -16,7 +16,7 @@ void loop() {
   if ((varSensor)==1) {
     Serial.println("DETECTADO");
     digitalWrite(LED, HIGH);
-    tone(buzz, 5000);
+    tone(buzz, 2500);
     delay(1000);
     digitalWrite(LED, LOW);
 
