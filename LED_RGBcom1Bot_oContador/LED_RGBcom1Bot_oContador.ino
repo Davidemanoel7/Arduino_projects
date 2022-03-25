@@ -28,47 +28,43 @@ void setup() {
 void loop() {
   cont = digitalRead(butt);
   if (cont == HIGH){
-  cont++;
-  Serial.println(cont);
+    delay(150);
+    cont++;
+    Serial.println(cont);
   }
-  
-    switch(cont){
-      case 1:
-        piscavermelho();
-        cont++;
-        break;
-      case 2:
-        piscaverde();
-        cont++;
-        break;
-      case 3:
-        piscaazul();
-        cont++;
-        break;
-      case 4:
-        cont = 0;
-        break;
-        }
-    
+  switch(cont){
+    case 1:
+      piscavermelho();
+      break;
+    case 2:
+      piscaverde();
+      break;
+    case 3:
+      piscaazul();
+      break;
+    default:
+      cont =  0;
+      break;
+  }          
 }
 
 void piscavermelho(void){
   digitalWrite(ledr, HIGH);
-  delay(2000);
+  delay(500);
   digitalWrite(ledr, LOW);
-  delay(2000);
+  delay(500);
 }
 
 void piscaverde(void){
   digitalWrite(ledg, HIGH);
-  delay(2000);
+  delay(500);
   digitalWrite(ledg, LOW); 
-  delay(2000); 
+  delay(500); 
 }
 
 void piscaazul(void){
   digitalWrite(ledb, HIGH);
-  delay(2000);
+  delay(500);
   digitalWrite(ledb, LOW);
-  delay(2000);
+  delay(500);
 }
