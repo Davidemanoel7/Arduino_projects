@@ -26,7 +26,6 @@ void setup() {
 }
 
 void loop() {
-  cont = digitalRead(butt);
   if (cont == HIGH){
     delay(150);
     cont++;
